@@ -35,7 +35,7 @@ public class ConversionTemperatura {
     }
 }
 ```
-### Ejercicio 2
+### Ejercicio 2: Numero mayor, menor o igual
 
 ```Java
 public class ejercicio2 {
@@ -56,7 +56,7 @@ public class ejercicio2 {
     }
 ```
 
-### Ejercicio 3
+### Ejercicio 3: Tabla de multiplicar numero 5
 
 ```Java
 public class CalificacionNota {
@@ -71,7 +71,7 @@ public class CalificacionNota {
 }
 
 ```
-### Ejercicio 4
+### Ejercicio 4: Cuenta regresiva desde el 30
 
 ```Java
 public class CuentaRegresiva {
