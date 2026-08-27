@@ -1,4 +1,4 @@
-# Portal del Curso - Diseño y Programación Orientada a Objetos (DOO)
+# Portal del Curso - Desarrollo Orientado a Objetos (DOO)
 
 Estudiante: Pedro Salas  
 Sección: DSY1102-012V  
