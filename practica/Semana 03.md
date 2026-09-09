@@ -1,4 +1,4 @@
-
+```python
 while True:
     try:
         numero = int(input("Ingrese numero entero positivo positivo:"))
@@ -10,4 +10,4 @@ while True:
             print(f"El numero {numero} no es positivo o entero, por favor ingrese numero entero positivo")
     except ValueError:
         print(f"El numero {numero} no es positivo o entero, por favor ingrese un numero entero positivo")
-
+```
