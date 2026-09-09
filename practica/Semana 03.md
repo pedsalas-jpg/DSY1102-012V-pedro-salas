@@ -1,3 +1,5 @@
+#EJERCICO PY NUMERO ENTERO POSITIVO
+
 ```python
 while True:
     try:
