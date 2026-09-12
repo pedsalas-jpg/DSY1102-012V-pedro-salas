@@ -1,4 +1,4 @@
 # Lab Veterinaria — Herencia y Polimorfismo
-Nombre: Tu Nombre Real
-Sección: Tu Sección
+Nombre: Pedro Salas
+Sección: 012v
 Estado: en progreso
