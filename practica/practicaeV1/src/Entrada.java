@@ -1,4 +1,4 @@
-public class Entrada {
+public abstract class Entrada {
 
     private String codigo;
     private String nombreEvento;
@@ -40,15 +40,14 @@ public class Entrada {
         }
     }
 
-    public double calcularPrecioFinal() {
-        return precioBase;
-    }
+    public abstract double calcularPrecioFinal();
 
     public double calcularPrecioFinal(double porcentajeDescuento) {
         if (porcentajeDescuento < 0 || porcentajeDescuento > 100) {
-            return precioBase;
+            return calcularPrecioFinal();
         }
-        return precioBase - (precioBase * porcentajeDescuento / 100.0);
+        double precioConRecargo = calcularPrecioFinal();
+        return precioConRecargo - (precioConRecargo * porcentajeDescuento / 100.0);
     }
 
     public boolean vender() {
