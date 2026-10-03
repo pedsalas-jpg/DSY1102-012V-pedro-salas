@@ -1,4 +1,4 @@
-public class Bicicleta {
+public abstract class Bicicleta {
 
     private String codigoBicicleta;
     private int anioFabriacion;
@@ -21,6 +21,16 @@ public class Bicicleta {
     }
 }
 
+public void setPrecioBase(double precioBase) {
+    if (precioBase > 0) {
+        this.precioBase = precioBase;
+    }
+
+    public void setPrecioBase(double precioBase) {
+    if (precioBase > 0) {
+        this.precioBase = precioBase;
+    }
+}
 
 
 
