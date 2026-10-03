@@ -44,6 +44,13 @@ public class Entrada {
         return precioBase;
     }
 
+    public double calcularPrecioFinal(double porcentajeDescuento) {
+        if (porcentajeDescuento < 0 || porcentajeDescuento > 100) {
+            return precioBase;
+        }
+        return precioBase - (precioBase * porcentajeDescuento / 100.0);
+    }
+
     public boolean vender() {
         if (disponible) {
             disponible = false;
