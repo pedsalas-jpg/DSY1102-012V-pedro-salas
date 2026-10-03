@@ -6,6 +6,15 @@ public abstract class Entrada {
     private boolean disponible;
 
     public Entrada(String codigo, String nombreEvento, double precioBase) {
+        if (codigo == null || codigo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El código es obligatorio y no puede estar vacío.");
+        }
+        if (nombreEvento == null || nombreEvento.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del evento es obligatorio y no puede estar vacío.");
+        }
+        if (precioBase <= 0) {
+            throw new IllegalArgumentException("El precio base debe ser mayor que cero.");
+        }
         this.codigo = codigo;
         this.nombreEvento = nombreEvento;
         this.precioBase = precioBase;

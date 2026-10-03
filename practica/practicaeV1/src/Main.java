@@ -9,17 +9,18 @@ public class Main {
 
         int opcion;
         do {
-            System.out.println("\n=== SARA - EVENTPASS (GESTIÓN DE ENTRADAS) ===");
+            System.out.println("\n=== EVENTPASS - SISTEMA DE GESTIÓN (ENTREGA FINAL) ===");
             System.out.println("1. Registrar nueva entrada");
             System.out.println("2. Listar todas las entradas");
             System.out.println("3. Listar solo entradas disponibles");
-            System.out.println("4. Ver lista de eventos registrados (sin duplicados)");
+            System.out.println("4. Ver lista de eventos registrados (únicos)");
             System.out.println("5. Buscar entrada por código");
-            System.out.println("6. Vender entrada por código");
-            System.out.println("7. Consultar reembolso por código");
-            System.out.println("8. Salir");
+            System.out.println("6. Consultar precio con descuento");
+            System.out.println("7. Vender entrada por código");
+            System.out.println("8. Consultar reembolso por código");
+            System.out.println("9. Salir");
 
-            opcion = lector.leerEnteroEnRango("Seleccione una opción: ", 1, 8);
+            opcion = lector.leerEnteroEnRango("Seleccione una opción: ", 1, 9);
 
             switch (opcion) {
                 case 1:
@@ -31,10 +32,10 @@ public class Main {
                         break;
                     }
 
-                    System.out.println("Tipos disponibles:");
+                    System.out.println("Tipos de Entrada:");
                     System.out.println("  1. General");
-                    System.out.println("  2. VIP (+30% recargo)");
-                    System.out.println("  3. Streaming (+10% recargo)");
+                    System.out.println("  2. VIP (+30% recargo, permite reembolso)");
+                    System.out.println("  3. Streaming (+10% recargo, permite reembolso)");
                     int tipo = lector.leerEnteroEnRango("Seleccione tipo (1-3): ", 1, 3);
 
                     String nombreEvento = lector.leerTextoNoVacio("Ingrese el nombre del evento: ");
@@ -43,7 +44,7 @@ public class Main {
                     if (eventPass.registrarEntrada(tipo, codigo, nombreEvento, precioBase)) {
                         System.out.println("¡Entrada registrada con éxito!");
                     } else {
-                        System.out.println("Error al registrar la entrada.");
+                        System.out.println("No se pudo registrar la entrada.");
                     }
                     break;
 
@@ -72,10 +73,10 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("\n--- NOMBRES DE EVENTOS REGISTRADOS (SIN REPETICIÓN) ---");
+                    System.out.println("\n--- EVENTOS REGISTRADOS (SIN REPETICIÓN) ---");
                     Set<String> eventos = eventPass.getEventos();
                     if (eventos.isEmpty()) {
-                        System.out.println("No hay eventos registrados aún.");
+                        System.out.println("No hay eventos registrados.");
                     } else {
                         for (String evento : eventos) {
                             System.out.println("- " + evento);
@@ -90,31 +91,48 @@ public class Main {
                     if (encontrada != null) {
                         mostrarDetalleEntrada(encontrada);
                     } else {
-                        System.out.println("No se encontró ninguna entrada con el código: " + codBuscar);
+                        System.out.println("Error: No se encontró la entrada con el código '" + codBuscar + "'.");
                     }
                     break;
 
                 case 6:
-                    System.out.println("\n--- VENTA DE ENTRADA ---");
-                    String codVender = lector.leerTextoNoVacio("Ingrese el código de la entrada a vender: ");
-                    if (eventPass.venderEntrada(codVender)) {
-                        System.out.println("¡Venta realizada con éxito!");
+                    System.out.println("\n--- CONSULTA DE PRECIO CON DESCUENTO ---");
+                    String codDesc = lector.leerTextoNoVacio("Ingrese el código de la entrada: ");
+                    Entrada eDesc = eventPass.buscarPorCodigo(codDesc);
+                    if (eDesc != null) {
+                        double descuento = lector.leerDoubleEnRango("Ingrese porcentaje de descuento (0-100): ", 0, 100);
+                        System.out.println("Precio final con " + descuento + "% de descuento: $" + eDesc.calcularPrecioFinal(descuento));
                     } else {
-                        System.out.println("Operación rechazada: Código inexistente o la entrada ya estaba vendida.");
+                        System.out.println("Error: No se encontró la entrada con el código '" + codDesc + "'.");
                     }
                     break;
 
                 case 7:
+                    System.out.println("\n--- VENTA DE ENTRADA ---");
+                    String codVender = lector.leerTextoNoVacio("Ingrese el código de la entrada a vender: ");
+                    Entrada eVender = eventPass.buscarPorCodigo(codVender);
+                    if (eVender == null) {
+                        System.out.println("Error: La entrada con el código '" + codVender + "' no existe.");
+                    } else if (!eVender.isDisponible()) {
+                        System.out.println("Operación rechazada: La entrada ya fue vendida previamente.");
+                    } else {
+                        if (eventPass.venderEntrada(codVender)) {
+                            System.out.println("¡Venta realizada con éxito!");
+                        }
+                    }
+                    break;
+
+                case 8:
                     System.out.println("\n--- CONSULTA DE REEMBOLSO ---");
                     String codReembolso = lector.leerTextoNoVacio("Ingrese el código de la entrada: ");
                     System.out.println(eventPass.consultarReembolso(codReembolso));
                     break;
 
-                case 8:
+                case 9:
                     System.out.println("Saliendo de la aplicación...");
                     break;
             }
-        } while (opcion != 8);
+        } while (opcion != 9);
     }
 
     private static void mostrarDetalleEntrada(Entrada e) {

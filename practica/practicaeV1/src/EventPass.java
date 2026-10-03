@@ -5,14 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/*
- * CONTRASTE Y LIMITACIÓN DEL ARREGLO ESTÁTICO (Entrada[] de tamaño 3):
- * Un arreglo como 'Entrada[] arreglo = new Entrada[3];' posee un tamaño fijo definido al instanciarse.
- * Presenta las siguientes limitaciones frente a una List (ArrayList):
- * 1. Capacidad rígida: Si se intenta registrar un 4to elemento, se lanza 'ArrayIndexOutOfBoundsException'.
- * 2. Control manual de posiciones: Exige llevar un índice o verificar posiciones nulas en recorridos con 'for'.
- * 3. En contraste, 'List<Entrada>' ajusta su capacidad dinámicamente y permite agregar elementos sin límite predefinido.
- */
 public class EventPass {
 
     private List<Entrada> entradas;
@@ -35,18 +27,23 @@ public class EventPass {
         }
 
         Entrada nuevaEntrada;
-        switch (tipo) {
-            case 1:
-                nuevaEntrada = new EntradaGeneral(codigo, nombreEvento, precioBase);
-                break;
-            case 2:
-                nuevaEntrada = new EntradaVip(codigo, nombreEvento, precioBase);
-                break;
-            case 3:
-                nuevaEntrada = new EntradaStreaming(codigo, nombreEvento, precioBase);
-                break;
-            default:
-                return false;
+        try {
+            switch (tipo) {
+                case 1:
+                    nuevaEntrada = new EntradaGeneral(codigo, nombreEvento, precioBase);
+                    break;
+                case 2:
+                    nuevaEntrada = new EntradaVip(codigo, nombreEvento, precioBase);
+                    break;
+                case 3:
+                    nuevaEntrada = new EntradaStreaming(codigo, nombreEvento, precioBase);
+                    break;
+                default:
+                    return false;
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error de dominio: " + e.getMessage());
+            return false;
         }
 
         entradas.add(nuevaEntrada);
@@ -88,23 +85,13 @@ public class EventPass {
     public String consultarReembolso(String codigo) {
         Entrada e = buscarPorCodigo(codigo);
         if (e == null) {
-            return "No existe una entrada registrada con el código ingresado.";
+            return "Error: No existe ninguna entrada registrada con el código '" + codigo + "'.";
         }
         if (e instanceof Reembolsable) {
             Reembolsable reembolsable = (Reembolsable) e;
             return "Monto de reembolso disponible: $" + reembolsable.calcularMontoReembolso();
         } else {
-            return "Este tipo de entrada (General) no admite reembolso.";
-        }
-    }
-
-    // Demostración técnica del uso de arreglo temporal de tamaño 3
-    public void probarArregloFijo() {
-        Entrada[] arregloFijo = new Entrada[3];
-        for (int i = 0; i < arregloFijo.length; i++) {
-            if (arregloFijo[i] != null) {
-                System.out.println(arregloFijo[i].getCodigo());
-            }
+            return "Incompatible: La Entrada General no admite reembolso.";
         }
     }
 }
