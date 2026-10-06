@@ -16,7 +16,7 @@ public class GestorTallerBicicletas {
         }
         boolean registrado = bicicletas.add(bicicleta);
         if (registrado) {
-            System.out.println("Bicicleta registrada correctamente con el código: " + bicicleta.getCodigoBicicleta());
+            System.out.println(bicicleta.getCodigoBicicleta() + " (" + bicicleta.getClass().getSimpleName() + ") registrada correctamente.");
         }
         return registrado;
     }
@@ -41,10 +41,9 @@ public class GestorTallerBicicletas {
             return;
         }
 
-        System.out.println("=== LISTADO DE BICICLETAS EN TALLER ===");
+        System.out.println("=== LISTADO DE BICICLETAS ===");
         for (Bicicleta bicicleta : bicicletas) {
-            // Polimorfismo: se llama a calcularCostoMantencion() desde la referencia base Bicicleta
-            System.out.println(bicicleta.toString() + " | Costo Mantención: $" + bicicleta.calcularCostoMantencion());
+            System.out.println(bicicleta.toString());
         }
     }
 }
