@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Set;
 
-public class Main {
+public class MainPractica {
 
     public static void main(String[] args) {
         LecturaEntrada lector = new LecturaEntrada();
