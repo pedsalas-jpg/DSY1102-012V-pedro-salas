@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.reservarecintosfx.controller.FormController"
+      spacing="12" prefWidth="480" prefHeight="340">
+    <children>
+        <Label text="Nueva reserva deportiva"/>
+        <TextField fx:id="campoResponsable" promptText="Responsable"/>
+        <ComboBox fx:id="selectorRecinto" promptText="Selecciona recinto"/>
+        <ComboBox fx:id="selectorHora" promptText="Selecciona horario"/>
+        <Label fx:id="mensajeError" text=""/>
+        <HBox spacing="8">
+            <children>
+                <Button text="Guardar" onAction="#guardar"/>
+                <Button text="Volver" onAction="#volver"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>
