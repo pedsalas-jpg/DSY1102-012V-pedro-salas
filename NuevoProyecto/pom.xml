@@ -11,21 +11,33 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-<junit.version>5.12.1</junit.version>  </properties>
+    <junit.version>5.12.1</junit.version>
+  </properties>
 
   <dependencies>
+    <!-- JavaFX Controls -->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-controls</artifactId>
       <version>21.0.6</version>
     </dependency>
+
+    <!-- JavaFX FXML -->
     <dependency>
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>21.0.6</version>
     </dependency>
 
-<dependency>
+    <!-- JACKSON DATABIND (Librería agregada para solucionar el error) -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.17.2</version>
+    </dependency>
+
+    <!-- JUnit para Pruebas -->
+    <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>${junit.version}</version>
@@ -36,7 +48,8 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>  </dependencies>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
