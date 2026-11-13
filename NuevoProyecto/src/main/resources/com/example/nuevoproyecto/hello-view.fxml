@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.nuevoproyecto.HelloController"
+      spacing="14"
+      style="-fx-padding: 20;">
+
+  <Label text="Cápsula del Tiempo"
+         style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+  <Label text="Mensajes para nuestro yo del futuro"/>
+
+  <Button text="+ Escribir nuevo mensaje"
+          onAction="#abrirFormulario"/>
+
+  <TableView fx:id="tablaMensajes"
+             VBox.vgrow="ALWAYS">
+    <columns>
+      <TableColumn fx:id="colAutor" text="Autor" prefWidth="170"/>
+      <TableColumn fx:id="colTexto" text="Mensaje" prefWidth="420"/>
+      <TableColumn fx:id="colPlazo" text="Leer dentro de" prefWidth="160"/>
+    </columns>
+  </TableView>
+</VBox>
