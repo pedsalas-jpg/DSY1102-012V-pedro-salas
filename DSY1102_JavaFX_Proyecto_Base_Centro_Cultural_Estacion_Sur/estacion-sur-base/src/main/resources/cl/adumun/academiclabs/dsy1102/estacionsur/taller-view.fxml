@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="880.0" xmlns="http://javafx.com" xmlns:fx="http://javafx.com"
+            fx:controller="cl.adumun.academiclabs.dsy1102.estacionsur.TallerController">
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <left>
+        <VBox spacing="8" prefWidth="260">
+            <Label text="Nuevo Taller" style="-fx-font-weight: bold;"/>
+            <ComboBox fx:id="cmbModalidad" promptText="Modalidad" prefWidth="250"/>
+            <TextField fx:id="txtCodigo" promptText="Código"/>
+            <TextField fx:id="txtNombre" promptText="Nombre"/>
+            <TextField fx:id="txtDuracion" promptText="Duración (1 a 40 hrs)"/>
+            <TextField fx:id="txtCupos" promptText="Cupos (1 a 40)"/>
+
+            <Label text="Solo Presencial:"/>
+            <TextField fx:id="txtSala" promptText="Sala"/>
+            <CheckBox fx:id="chkMateriales" text="Materiales incluidos"/>
+
+            <Label text="Solo Virtual:"/>
+            <TextField fx:id="txtPlataforma" promptText="Plataforma"/>
+            <CheckBox fx:id="chkGrabacion" text="Grabación disponible"/>
+
+            <HBox spacing="10">
+                <Button text="Registrar" onAction="#registrar"/>
+                <Button text="Eliminar" onAction="#eliminar"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <center>
+        <TableView fx:id="tblTalleres">
+            <columns>
+                <TableColumn fx:id="colModalidad" text="Modalidad" prefWidth="100"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="190"/>
+                <TableColumn fx:id="colDuracion" text="Duración (hrs)" prefWidth="105"/>
+                <TableColumn fx:id="colCupos" text="Cupos" prefWidth="75"/>
+                <TableColumn fx:id="colArancel" text="Arancel ($)" prefWidth="110"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <Label fx:id="lblMensaje" text="Listo." style="-fx-padding: 10 0 0 0;"/>
+    </bottom>
+</BorderPane>

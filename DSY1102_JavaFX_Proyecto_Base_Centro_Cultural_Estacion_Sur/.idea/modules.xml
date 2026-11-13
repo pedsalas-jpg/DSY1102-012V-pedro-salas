@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DSY1102_JavaFX_Proyecto_Base_Centro_Cultural_Estacion_Sur.iml" filepath="$PROJECT_DIR$/.idea/DSY1102_JavaFX_Proyecto_Base_Centro_Cultural_Estacion_Sur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estacion-sur-base/estacion-sur-base.iml" filepath="$PROJECT_DIR$/estacion-sur-base/estacion-sur-base.iml" />
+    </modules>
+  </component>
+</project>
