@@ -9,6 +9,7 @@
         <module name="estacion-sur-base" />
         <module name="JavaFXMavenDemo" />
         <module name="ReservaRecintosFX" />
+        <module name="tallerbicicletas" />
       </profile>
     </annotationProcessing>
   </component>

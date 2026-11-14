@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="880.0" xmlns="http://javafx.com" xmlns:fx="http://javafx.com"
+            fx:controller="cl.duoc.tallerbicicletas.controller.TallerController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0"/>
+    </padding>
+
+    <left>
+        <VBox prefWidth="330.0" spacing="10.0">
+            <padding>
+                <Insets right="15.0"/>
+            </padding>
+            <Label text="Registro de bicicletas">
+                <font>
+                    <Font name="System Bold" size="18.0"/>
+                </font>
+            </Label>
+
+            <GridPane hgap="10.0" vgap="8.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="120.0" prefWidth="120.0"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Tipo:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <ComboBox fx:id="cmbTipo" maxWidth="Infinity" onAction="#cambiarTipo" promptText="Seleccione..." GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Año de fabricación:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtAnio" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Peso (kg):" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtPeso" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            </GridPane>
+
+            <TitledPane animated="false" collapsible="false" text="Datos de la bicicleta eléctrica">
+                <GridPane hgap="10.0" vgap="8.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="110.0" prefWidth="110.0"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Autonomía (km):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="txtAutonomia" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                    <CheckBox fx:id="chkBateriaCertificada" text="Batería certificada" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <CheckBox fx:id="chkGarantiaExtendida" text="Garantía extendida" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                </GridPane>
+            </TitledPane>
+
+            <TitledPane animated="false" collapsible="false" text="Datos de la bicicleta de montaña">
+                <GridPane hgap="10.0" vgap="8.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="110.0" prefWidth="110.0"/>
+                        <ColumnConstraints hgrow="ALWAYS"/>
+                    </columnConstraints>
+
+                    <Label text="Suspensiones:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <TextField fx:id="txtSuspensiones" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+            </TitledPane>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button fx:id="btnRegistrar" onAction="#registrar" prefWidth="100.0" text="Registrar"/>
+            </HBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets top="32.0"/>
+            </padding>
+            <TableView fx:id="tblBicicletas" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colTipo" prefWidth="135.0" text="Tipo"/>
+                    <TableColumn fx:id="colCodigo" prefWidth="85.0" text="Código"/>
+                    <TableColumn fx:id="colAnio" prefWidth="65.0" text="Año"/>
+                    <TableColumn fx:id="colPeso" prefWidth="80.0" text="Peso (kg)"/>
+                    <TableColumn fx:id="colCosto" prefWidth="125.0" text="Costo mantención"/>
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT">
+                <Button fx:id="btnEliminar" onAction="#eliminar" prefWidth="90.0" text="Eliminar"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Label fx:id="lblMensaje" style="-fx-font-weight: bold;" text="">
+            <padding>
+                <Insets top="10.0"/>
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>
