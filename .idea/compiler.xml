@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="estacion-sur-base" />
+        <module name="gestorClientesFX" />
         <module name="JavaFXMavenDemo" />
         <module name="ReservaRecintosFX" />
         <module name="tallerbicicletas" />
