@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/DSY1102_JavaFX_Proyecto_Base_Centro_Cultural_Estacion_Sur/estacion-sur-base/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/DSY1102_JavaFX_Proyecto_Base_Centro_Cultural_Estacion_Sur/estacion-sur-base/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GestorClientesFX/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GestorClientesFX/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaFXMavenDemo/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaFXMavenDemo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NuevoProyecto/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NuevoProyecto/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ReservaRecintosFX/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ReservaRecintosFX/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/TallerBicicletas_EP2_Base/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/TallerBicicletas_EP2_Base/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/GestorClientesFX/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/GestorClientesFX/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/JavaFXMavenDemo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/JavaFXMavenDemo/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/ReservaRecintosFX/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/ReservaRecintosFX/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/TallerBicicletas_EP2_Base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/TallerBicicletas_EP2_Base/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/estacion-sur-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProyectosJavaFX/estacion-sur-base/src/main/resources" charset="UTF-8" />
   </component>
 </project>
