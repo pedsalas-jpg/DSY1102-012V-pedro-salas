@@ -6,12 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="estacion-sur-base" />
-        <module name="gestorClientesFX" />
-        <module name="JavaFXMavenDemo" />
-        <module name="ReservaRecintosFX" />
-        <module name="tallerbicicletas" />
+        <module name="NuevoProyecto" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="estacion-sur-base" target="17" />
+      <module name="gestorClientesFX" target="21" />
+      <module name="JavaFXMavenDemo" target="17" />
+      <module name="ReservaRecintosFX" target="21" />
+      <module name="tallerbicicletas" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
